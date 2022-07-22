@@ -12,6 +12,11 @@ fn main() {
         Some(ref path) => cpu.load_rom(path),
         _ => return
     };
+    let running = true;
+    while running {
+        cpu.cycle();
+    }
+
 }
 
 fn get_game() -> Option<PathBuf> {
